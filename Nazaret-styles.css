@@ -1181,6 +1181,7 @@ a.portfolio-btn-featured:hover {
     max-width: 100% !important;
     box-sizing: border-box !important;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 10px 14px !important; /* Mantiene la forma limpia de cápsula */
     background: #ffffff;
@@ -1193,6 +1194,9 @@ a.portfolio-btn-featured:hover {
     font-size: 0.82rem !important; /* Ajusta la letra para que el texto fluya sin salirse */
     line-height: 1.3;
     margin: 0;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
