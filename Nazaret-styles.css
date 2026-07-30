@@ -402,48 +402,45 @@ body {
 
 /* Laptops pequeñas y Tablets horizontales */
 @media (max-width: 902px) {
-    .features-bar {
-        padding: 14px 15px;
-    }
-    
-    .feature-item {
-        font-size: 12px;
-        gap: 6px;
-    }
+  .features-bar {
+    padding: 14px 15px;
+  }
+
+  .feature-item {
+    font-size: 12px;
+    gap: 6px;
+  }
 }
 
 /* Pantallas de celular y Tablets verticales */
 @media (max-width: 768px) {
-    .features-bar-wrapper {
-        margin-bottom: -100px;
-    }
+  .features-bar-wrapper {
+    margin-bottom: -100px;
+  }
 
-    .features-bar {
-        flex-wrap: wrap; /* Acomoda las píldoras en 2 filas */
-        gap: 10px;
-        justify-content: center;
-        padding: 14px;
-        background-color: #f5f0eb;
-    }
+  .features-bar {
+    flex-wrap: wrap; /* Acomoda las píldoras en 2 filas */
+    gap: 8px;
+    justify-content: center;
+    padding: 12px;
+    background-color: #f5f0eb;
+  }
 
-    .feature-divider {
-        display: none; /* Oculta las líneas verticales en móvil */
-    }
+  .feature-divider {
+    display: none; /* Oculta las líneas verticales en móvil */
+  }
 
-    .feature-item {
-        width: 46%; /* 2 items por fila bien alineados */
-        justify-content: center;
-        background-color: #ffffff; /* Píldoras blancas internas para móvil */
-        padding: 10px 8px;
-        border-radius: 25px;
-        font-size: 12px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-    }
-}
-
-/* Ajuste de margen para la sección que va inmediatamente después (About Me) */
-.about-section {
-    padding-top: 80px; /* Le da espacio suficiente para que la cinta no tape el texto */
+  .feature-item {
+    flex: 1 1 calc(50% - 10px); /* Hace que cada píldora mida exactamente la mitad del espacio */
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: #ffffff; /* Píldoras blancas internas para móvil */
+    padding: 8px 4px;          /* Menos relleno a los lados para que quepa la palabra larga */
+    border-radius: 25px;
+    font-size: 11px;           /* Letra ligeramente más ajustada para que "Confidencialidad" entre perfecta */
+    white-space: nowrap;       /* Fuerza a que el texto no se rompa */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+  }
 }
 
 
@@ -1135,7 +1132,7 @@ a.portfolio-btn-featured:hover {
 }
 
 /* ==========================================
-   ADAPTACIÓN MÓVIL (RESPONSIVE)
+   ADAPTACIÓN MÓVIL (RESPONSIVE) - FREE ESTIMATE
    ========================================== */
 @media (max-width: 900px) {
   .estimate-card {
@@ -1164,9 +1161,38 @@ a.portfolio-btn-featured:hover {
     bottom: 4px;
   }
 
+  /* --- AJUSTES DE CONTENEDOR Y CÁPSULAS PARA MÓVIL --- */
   .estimate-text-side {
-    width: 100%;
-    padding: 30px 20px;
+    width: 100% !important;
+    padding: 30px 18px !important; /* Espaciado interno seguro */
+    box-sizing: border-box;
+  }
+
+  .estimate-features {
+    width: 100% !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px !important; /* Mantiene la forma limpia de cápsula */
+    background: #ffffff;
+    border-radius: 20px;
+    gap: 10px;
+    margin: 0 !important;
+  }
+
+  .feature-item p {
+    font-size: 0.82rem !important; /* Ajusta la letra para que el texto fluya sin salirse */
+    line-height: 1.3;
+    margin: 0;
   }
 }
 
@@ -1415,6 +1441,44 @@ form textarea::placeholder {
 }
 
 /* ==========================================
+   ADAPTACIÓN MÓVIL (RESPONSIVE) - CONTACTO
+   ========================================== */
+@media (max-width: 900px) {
+  /* 1. Cambia el grid a una sola columna vertical */
+  .contact-card {
+    grid-template-columns: 1fr !important;
+    padding: 30px 20px !important;
+    gap: 30px !important;
+  }
+
+  /* 2. Oculta la línea divisoria vertical */
+  .contact-divider {
+    display: none !important;
+  }
+
+  /* 3. Pasa los campos del formulario (Nombre / Correo) a 1 sola columna */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* 4. Asegura que inputs y textareas no superen el ancho disponible */
+  .contact-card input,
+  .contact-card textarea,
+  .form-group input,
+  .form-group textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5. Ajuste opcional para centrar o expandir el botón de enviar en celular */
+  .btn-send {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+/* ==========================================
    PIE DE PÁGINA (FOOTER)
    ========================================== */
 .main-footer {
@@ -1523,28 +1587,22 @@ form textarea::placeholder {
   color: #64748b;
 }
 
-/* Responsivo para celulares */
+/* ==========================================
+   ADAPTACIÓN MÓVIL (SOLO PARA CELULAR)
+   ========================================== */
 @media (max-width: 900px) {
-  .contact-card {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
-  
-  .contact-divider {
-    display: none;
-  }
-  
+
+  /* --- Tus reglas previas de la sección de contacto van aquí --- */
+
+  /* --- FOOTER: Solo se activa en pantallas pequeñas --- */
   .footer-container {
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: flex-start !important;
   }
 
-  .footer-social {
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
+  .footer-nav {
+    flex-wrap: wrap !important;
+    gap: 12px 20px !important;
   }
 }
