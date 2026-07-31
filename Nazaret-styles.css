@@ -1201,7 +1201,7 @@ a.portfolio-btn-featured:hover {
     margin: 0;
     width: 100%;
     word-break: break-word;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 }
 
