@@ -296,7 +296,7 @@ body {
 .hero-container {
     max-width: 1230px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 3px;
 }
 
 .hero-content {
@@ -1168,7 +1168,7 @@ a.portfolio-btn-featured:hover {
   /* --- AJUSTES DE CONTENEDOR Y CÁPSULAS PARA MÓVIL --- */
   .estimate-text-side {
     width: 100% !important;
-    padding: 30px 18px !important; /* Espaciado interno seguro */
+    padding: 24px 12px !important; /* Espaciado interno seguro */
     box-sizing: border-box;
   }
 
@@ -1201,7 +1201,7 @@ a.portfolio-btn-featured:hover {
     margin: 0;
     width: 100%;
     word-break: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -1621,5 +1621,41 @@ form textarea::placeholder {
   .footer-nav {
     flex-wrap: wrap !important;
     gap: 12px 20px !important;
+  }
+}
+
+
+/* =======================================================
+   ALINEACIÓN GLOBAL Y FIX DE ZOOM PARA PANTALLAS GRANDES
+   ======================================================= */
+@media (min-width: 901px) {
+  .hero-container,
+  .about-container,
+  .services-container,
+  .portfolio-hero-card,
+  .estimate-card,
+  .contact-card,
+  .footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-section,
+  .main-footer{
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
   }
 }
